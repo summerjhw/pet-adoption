@@ -15,6 +15,7 @@
     <div class="title">
       <h1>Mythical Pet Adoption</h1>
     </div>
+    <a class="headLink" href="/admin.html">Admin </a>
   </div>
   <div id="app" class="content">
     <section class="image-gallery">
@@ -22,6 +23,7 @@
         <div class="pet">
           <h2>{{pet.name}}: {{pet.species}}</h2>
           <img :src="pet.path" />
+          <p></p>
           <button @click="updateProfile(pet)">More info</button>
           <div class="profLink" v-if="pet == currentPet">
             <a href="profile.html">{{pet.name}} 's Profile! </a>
@@ -34,7 +36,6 @@
     </section>
   </div>
   <div class="footer">
-    <a href="/admin.html">Admin </a>
     <a href="https://github.com/summerjhw/pet-adoption"> GitHub Repository</a>
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js" integrity="sha256-mpnrJ5DpEZZkwkE1ZgkEQQJW/46CSEh/STrZKOB/qoM="
