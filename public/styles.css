@@ -1,0 +1,104 @@
+input, textarea, select, button {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1em;
+  }
+  
+  .form {
+    margin-right: 50px;
+  }
+  
+.heading {
+    display: flex;
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+
+  .create h2 {
+    margin: 0px;
+  }
+  
+  .create img {
+    max-width: 300px;
+  }
+
+
+  .header {
+    display: flex;
+    padding: 20px 100px 0px 100px;
+    background-color: rgb(92, 236, 121);
+    color: rgb(210, 243, 234);
+  }
+
+  .logo img {
+    width:70px;
+  }
+
+
+  /* Masonry */
+html {
+    box-sizing: border-box;
+  }
+  
+  *,
+  *:before,
+  *:after {
+    box-sizing: inherit;
+  }
+  
+  .image-gallery {
+    column-gap: 1.5em;
+  }
+  
+  .image {
+    margin: 0 0 3em;
+    display: inline-block;
+    width: 100%;
+  }
+  
+  .image img {
+    width: 100%;
+  }
+
+  .img {
+    width: 100%;
+  }
+
+  .preview img {
+    width: 250px;
+  }
+  
+  /* Masonry on large screens */
+  @media only screen and (min-width: 1024px) {
+    .image-gallery {
+      column-count: 2;
+    }
+  }
+
+  .pet {
+    padding: 2em;
+    margin: 2em;
+  }
+  
+  /* Masonry on medium-sized screens */
+  @media only screen and (max-width: 1023px) and (min-width: 768px) {
+    .image-gallery {
+      column-count: 2;
+    }
+  }
+  
+  /* Masonry on small screens */
+  @media only screen and (max-width: 767px) and (min-width: 540px) {
+    .image-gallery {
+      column-count: 2;
+    }
+  }
+
+  .circle {
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    padding: 8px;
+    background: #333;
+    color: #fff;
+    text-align: center;
+  }
