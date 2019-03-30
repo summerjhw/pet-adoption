@@ -11,7 +11,6 @@
   <div id="admin" class="content">
     <h1>Mythical Pet Adoption: Admin</h1>
     <div class="heading">
-      <div class="circle"></div>
       <h2>New Pet Profile</h2>
     </div>
     <div class="add">
@@ -20,16 +19,65 @@
         <input v-model="species" placeholder="Species">
         <input v-model="att" placeholder="Attribute">
         <button @click="addAtt">Add Attribute</button>
+        <div class="attr">
+          <div v-for="att in attributes">
+            {{att}}
+          </div>
+        </div>
         <p></p>
+        <h3>Description:</h3>
+        <p>
+          <textarea v-model="description"> </textarea>
+        </p>
         <input type="file" name="photo" @change="fileChanged">
         <button @click="create">Create</button>
-      </div>
-      <div class="create" v-if="pet">
-        <h2>{{pet.name}}</h2>
-        <img :src="pet.path" />
+        <button @click="clear">Clear All</button>
+
       </div>
     </div>
-  </div>  
+    
+    <div class="create" v-if="pet">
+      <h2>{{pet.name}}</h2>
+      <img :src="pet.path" />
+    </div>
+
+    <p>
+      <p></p>
+    </p>
+
+    <h2>Edit/Delete a Profile</h2>
+    <div class="edit">
+      <div class="form">
+        <input v-model="editName" placeholder="Search">
+        <div class="suggestions" v-for="s in suggestions" @click="selectPet(s)">
+          <div class="suggestion">
+            {{s.name}}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="change" v-if="editPet">
+      <input v-model="editName" placeholder="edit Name">
+      <input v-model="editSpecies" placeholder="Edit Species">
+      <input v-model="eAtt" placeholder="Add Attribute">
+      <button @click="addEAtt()">Add Attribute</button>
+      <div class="attr">
+          <div v-for="att in eAttributes">
+            {{att}}
+          </div>
+        </div>
+      <h3>Change Description:</h3>
+      <p>
+        <textarea v-model="editDescription"></textarea>
+      </p>
+
+      <img :src="editPet.path" />
+    </div>
+    <div class="actions" v-if="">
+      <button @click="deletePet(editPet)">Delete</button>
+      <button @click="uploadPet(editPet)">Edit</button>
+    </div>
+  </div>
 
   <div class="footer">
     <a href="https://github.com/summerjhw/pet-adoption"> | GitHub Repository</a>

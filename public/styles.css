@@ -1,11 +1,54 @@
+/* Form */
 input, textarea, select, button {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1em;
-  }
-  
-  .form {
-    margin-right: 50px;
-  }
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1em;
+}
+
+/* Content */
+.content {
+  padding: 20px 100px 0px 100px;
+}
+
+.form {
+  margin-right: 50px;
+}
+
+.actions {
+  margin:1em;
+}
+
+.add, .edit {
+  display: flex;
+  margin-bottom:3em;
+  padding:1em;
+  border-bottom:1px;
+  border-color:black;
+}
+
+
+/* Uploaded images */
+.change h2 {
+  margin: 0px;
+}
+
+.change img {
+  max-width: 300px;
+}
+
+/* Suggestions */
+.suggestions {
+  width: 200px;
+  border: 1px solid #ccc;
+}
+
+.suggestion {
+  min-height: 20px;
+}
+
+.suggestion:hover {
+  background-color: #5BDEFF;
+  color: #fff;
+}
   
 .heading {
     display: flex;
@@ -29,8 +72,23 @@ input, textarea, select, button {
     color: rgb(210, 243, 234);
   }
 
+  .profHeader{
+    background-color:#888;
+    padding-bottom:2em;
+
+  }
+  #profile .logo img {
+    width: 70px;
+  }
+
+  .profHeader a {
+    color:#ff9;
+
+  }
+
   .logo img {
     width:70px;
+    margin-right:1em;
   }
 
 
@@ -101,4 +159,38 @@ html {
     background: #333;
     color: #fff;
     text-align: center;
+  }
+
+  #profile img{
+    width: 500px;
+    margin:2em;
+  }
+
+  #profile {
+    text-align:center;
+    background: rgb(82, 83, 40);
+    color:#ff9;
+    margin-bottom:4em;
+    padding-bottom: 3em;
+  }
+
+  .footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color:#f7f9fd9e;
+    color: rgb(250, 6, 6);
+    text-align: center;
+  }
+
+  .attr {
+    padding-left:27em;
+  }
+
+  .description{
+    padding-left:30em;
+    padding-right:30em;
+    margin:1em;
+    text-align:left;
   }

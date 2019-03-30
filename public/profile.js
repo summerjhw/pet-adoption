@@ -29,7 +29,27 @@ var app = new Vue({
                 console.log(error);
             }
         },
-    }
 
+        adopt(){
+            this.pet.adopted = true;
+            this.uploadPet();
+        },
+
+        async uploadPet() {
+            try {
+                let response = await axios.put("/api/pets/" + this.pet._id, {
+                    name: this.pet.name,
+                    species: this.pet.species,
+                    description: this.pet.description,
+                    attributes: this.pet.attr,
+                    adopted: true,
+
+                });
+                return true;
+            } catch (error) {
+                console.log(error);
+            }
+        },
+    }
 
 });

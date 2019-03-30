@@ -115,7 +115,37 @@ app.get('/api/pets/:id', async (req, res) => {
     console.log(error);
     res.sendStatus(500);
   }
+});
 
+app.delete('/api/pets/:id', async (req,res) =>{
+  try {
+    await Pet.deleteOne({
+      _id: req.params.id
+    });
+    res.sendStatus(200);
+  } catch (error) {
+    console.log(error);
+    res.sendStatus(500);
+  }
+});
+
+app.put('/api/pets/:id', async (req,res) => {
+  try {
+    let pet = await Pet.findOne({
+      _id: req.params.id
+    });
+    pet.name = req.body.name;
+    pet.species = req.body.species;
+    pet.description = req.body.description;
+    pet.attributes = req.body.attributes;
+    pet.adopted = req.body.adopted;
+    await pet.save();
+    res.sendStatus(200);
+  }
+  catch(error) {
+    console.log(error);
+    res.sendStatus(500);
+  }
 });
 
 
