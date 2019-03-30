@@ -23,7 +23,7 @@
           <h2>{{pet.name}}: {{pet.species}}</h2>
           <img :src="pet.path" />
           <button @click="updateProfile(pet)">More info</button>
-          <div v-if="pet == currentPet">
+          <div class="profLink" v-if="pet == currentPet">
             <a href="profile.html">{{pet.name}} 's Profile! </a>
           </div>
           <div v-else>
