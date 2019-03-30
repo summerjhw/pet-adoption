@@ -3,7 +3,7 @@
 
 <head>
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-  <link rel="stylesheet" href="/styles.css" />
+  <link rel="stylesheet" href="styles.css" />
   <title>Mythical Pet Adoption</title>
 </head>
 
@@ -23,7 +23,6 @@
         <div class="pet">
           <h2>{{pet.name}}: {{pet.species}}</h2>
           <img :src="pet.path" />
-          <p></p>
           <button @click="updateProfile(pet)">More info</button>
           <div class="profLink" v-if="pet == currentPet">
             <a href="profile.html">{{pet.name}} 's Profile! </a>
